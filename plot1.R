@@ -11,12 +11,16 @@ if (!file.exists("household_power_consumption.txt")) {
         print('The dataset was previously downloaded and extracted')
 }
 
+#Read the complete dataset
 T <- read.table("household_power_consumption.txt",header = TRUE, sep= ";")
 
+#Select a subset 
 Tsub <- subset(T, Date == "1/2/2007" | Date == "2/2/2007")
 
+#Free memory
 rm(T)
 
+#Convert some columns
 Tsub$Global_active_power = as.numeric(as.character(Tsub$Global_active_power))
 Tsub$Global_reactive_power = as.numeric(as.character(Tsub$Global_reactive_power))
 Tsub$Voltage = as.numeric(as.character(Tsub$Voltage))
@@ -24,7 +28,7 @@ Tsub$Global_intensity = as.numeric(as.character(Tsub$Global_intensity))
 Tsub$Sub_metering_1= as.numeric(as.character(Tsub$Sub_metering_1))
 Tsub$Sub_metering_2= as.numeric(as.character(Tsub$Sub_metering_2))
 
-
+#Code for plotting and saving in a PNF File
 png("plot1.png", width=480, height=480)
 with(Tsub, hist(Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)"))
 dev.off()
