@@ -28,7 +28,7 @@ Tsub$Global_intensity = as.numeric(as.character(Tsub$Global_intensity))
 Tsub$Sub_metering_1= as.numeric(as.character(Tsub$Sub_metering_1))
 Tsub$Sub_metering_2= as.numeric(as.character(Tsub$Sub_metering_2))
 
-#Code for plotting and saving in a PNF File
+#Code for plotting and saving in a PNG File
 png("plot1.png", width=480, height=480)
 with(Tsub, hist(Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)"))
 dev.off()
