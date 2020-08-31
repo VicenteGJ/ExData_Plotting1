@@ -30,7 +30,7 @@ Tsub$Sub_metering_2= as.numeric(as.character(Tsub$Sub_metering_2))
 #Conver the firt two columns
 datetime <- strptime(paste(Tsub$Date, Tsub$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 
-#Code for plotting and saving in a PNF File
+#Code for plotting and saving in a PNG File
 png("plot4.png", width=480, height=480)
 
 par(mfrow = c(2, 2)) 
